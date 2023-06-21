@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+    .break-word {
+        word-break: break-word;
+    }
+
+    * {
+        @apply outline-1 outline-white;
+    }
+
+    header > .links > a {
+        @apply mx-auto w-fit cursor-pointer xl:w-full xl:py-1;
+        word-break: break-word;
+    }
+
+    header > .links > a.active {
+        @apply font-bold;
+    }
+
+    header > .links > a > span {
+        @apply flex w-fit items-center gap-5 rounded-full p-3 text-xl transition duration-150 xl:py-3 xl:pl-4 xl:pr-6;
+    }
+
+    header > .links > a:hover > span {
+        @apply bg-white/10;
+    }
+
+    header > .links > a > span > div {
+        @apply aspect-square w-[1.45rem] shrink-0 rounded-full xl:mt-0.5;
+    }
+
+    header > .links > a.active > span > div {
+        @apply bg-gray-200 xl:mt-0.5;
+    }
+
+    header > .links > a > span > p {
+        @apply hidden text-gray-200 xl:block;
+    }
+
+    header > .links > a.active > span > p {
+        @apply text-white;
+    }
+
+    .mainflow-grid {
+        @apply mx-4 my-3 grid xs:hidden;
+        grid-template-columns: 1fr auto 1fr;
+        place-items: center start;
+    }
+
+    .tweet:empty::before {
+        content: "What is happening?!";
+        @apply cursor-text text-white/50;
+    }
+
+    .tweet-dots-button:hover > div {
+        @apply bg-sky-500 !important;
+    }
+
+    .reply-div {
+        @apply absolute bottom-0 left-[50%] w-0.5 rounded-full bg-white/25;
+        height: calc(100% - 2.8rem);
+        transform: translateX(-50%);
+    }
+
+    .tweet-options-button:is(:nth-child(1), :nth-child(4)) > div:hover > div {
+        @apply bg-sky-800/30;
+    }
+
+    .tweet-options-button:is(:nth-child(1), :nth-child(4)) > div:hover > div > div {
+        @apply border-sky-500 !important;
+    }
+
+    .tweet-options-button:is(:nth-child(1), :nth-child(4)) > div:hover > p {
+        @apply text-sky-500 !important;
+    }
+
+    .tweet-options-button:is(:nth-child(2)) > div:hover > div {
+        @apply bg-emerald-800/30;
+    }
+
+    .tweet-options-button:is(:nth-child(2)) > div:hover > div > div {
+        @apply border-emerald-500 !important;
+    }
+
+    .tweet-options-button:is(:nth-child(2)) > div:hover > p {
+        @apply text-emerald-500 !important;
+    }
+
+    .tweet-options-button:is(:nth-child(3)) > div:hover > div {
+        @apply bg-pink-800/30;
+    }
+
+    .tweet-options-button:is(:nth-child(3)) > div:hover > div > div {
+        @apply border-pink-700 !important;
+    }
+
+    .tweet-options-button:is(:nth-child(3)) > div:hover > p {
+        @apply text-pink-700 !important;
+    }
+
+    .side-column > div > p {
+        @apply inline-block cursor-pointer pr-3 text-sm text-gray-500 hover:underline last:hover:cursor-auto last:hover:no-underline;
+    }
+}
