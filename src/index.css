@@ -2,45 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer {
-    .break-word {
-        word-break: break-word;
-    }
-
+@layer base {
     * {
         @apply outline-1 outline-white;
     }
+}
 
-    header > .links > a {
-        @apply mx-auto w-fit cursor-pointer xl:w-full xl:py-1;
-        word-break: break-word;
-    }
-
-    header > .links > a.active {
+@layer components {
+    .header-links > a.active {
         @apply font-bold;
     }
 
-    header > .links > a > span {
-        @apply flex w-fit items-center gap-5 rounded-full p-3 text-xl transition duration-150 xl:py-3 xl:pl-4 xl:pr-6;
-    }
-
-    header > .links > a:hover > span {
+    .header-links > a:hover > span {
         @apply bg-white/10;
     }
 
-    header > .links > a > span > div {
-        @apply aspect-square w-[1.45rem] shrink-0 rounded-full xl:mt-0.5;
-    }
-
-    header > .links > a.active > span > div {
+    .header-links > a.active > span > div {
         @apply bg-gray-200 xl:mt-0.5;
     }
 
-    header > .links > a > span > p {
-        @apply hidden text-gray-200 xl:block;
-    }
-
-    header > .links > a.active > span > p {
+    .header-links > a.active > span > p {
         @apply text-white;
     }
 
@@ -101,7 +82,13 @@
         @apply text-pink-700 !important;
     }
 
-    .side-column > div > p {
+    .side-column-div > p {
         @apply inline-block cursor-pointer pr-3 text-sm text-gray-500 hover:underline last:hover:cursor-auto last:hover:no-underline;
+    }
+}
+
+@layer utilities {
+    .break-word {
+        word-break: break-word;
     }
 }
